@@ -19,8 +19,14 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #Tried to use authenicate() for login
+    #Learned about LoginViews, abandoned login app.
     # path('login/', include('login.urls')),
-    path('accounts/', include('django.contrib.auth.urls'))
+
+
+    path('', include('home.urls')),
+    path('accounts/', include('django.contrib.auth.urls'), name="login")
 
 
 ]
